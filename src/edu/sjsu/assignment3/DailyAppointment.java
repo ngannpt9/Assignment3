@@ -28,6 +28,6 @@ public class DailyAppointment extends Appointment{
     @Override
     public boolean occursOn(LocalDate date) {
 
-        return  (startDate.isBefore(date) && endDate.isAfter(date));
+        return  (!(startDate.isAfter(date) || endDate.isBefore(date)));
     }
 }

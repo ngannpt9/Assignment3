@@ -33,6 +33,6 @@ public class MonthlyAppointment extends Appointment{
         //get day of input date
         LocalDate b = LocalDate.ofEpochDay(date.getDayOfMonth());
 
-        return  ((startDate.isBefore(date) && endDate.isAfter(date)) && a.isEqual(b));
+        return ( !(startDate.isAfter(date) || endDate.isBefore(date))&& a.isEqual(b));
     }
 }
